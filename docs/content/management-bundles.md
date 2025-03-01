@@ -1237,7 +1237,7 @@ To build and push a policy bundle to a remote OCI registry with the [OPA CLI](..
 - `opa build <path_to_src>` will allow you to build a bundle tarball from your OPA policy and data files
 
 Now that we have the tarball we will need to provide a config manifest to the ORAS CLI and the tarball itself: 
-- `oras push <registry>/<org>/<repo>:<tag> --manifest-config <you_config_json>:application/vnd.oci.image.config.v1+json <the_tarball_obtained_from_opa_build>:application/vnd.oci.image.layer.v1.tar+gzip`
+- `oras push <registry>/<org>/<repo>:<tag> --config <you_config_json>:application/vnd.oci.image.config.v1+json <the_tarball_obtained_from_opa_build>:application/vnd.oci.image.layer.v1.tar+gzip`
 
 Using an empty(`{}`) `manifest-config` json file should be sufficient to be able to push and allow the OCI downloader to use the remote policy image. 
 
